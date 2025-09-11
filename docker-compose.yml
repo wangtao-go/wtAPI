@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wtAPI
+    ports:
+      - "8263:8000"
+    volumes:
+      - .:/app  # 实时同步代码到容器
+      - /app/__pycache__  # 避免Python缓存文件冲突
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+      - UWSGI_WSGI_FILE=wtAPI/wsgi.py
+      - UWSGI_HTTP=:8000
+      - UWSGI_MASTER=1
+      - UWSGI_WORKERS=2
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

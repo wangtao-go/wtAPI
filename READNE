@@ -1,0 +1,17 @@
+#数据迁移
+python manage.py makemigrations APIServer
+python manage.py migrate APIServer
+python manage.py migrate APIServer --fake-initial --database=postgreswt
+
+
+
+
+
+
+
+
+
+
+
+
+
