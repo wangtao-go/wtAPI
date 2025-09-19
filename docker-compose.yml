@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: wtapi:latest
     container_name: wtAPI
     ports:
       - "8263:8000"
@@ -20,3 +21,9 @@ services:
     restart: unless-stopped
     stdin_open: true
     tty: true
+
+
+
+
+
+

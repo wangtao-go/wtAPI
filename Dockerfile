@@ -19,7 +19,3 @@ RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua
 # 启动命令（开发模式可以使用自动重载）
 CMD ["uwsgi", "--ini", "uwsgi.ini", "--py-auto-reload=2"]
 
-
-
-
-
